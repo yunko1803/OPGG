@@ -61,8 +61,6 @@ function generate() {
 
   switch (type) {
     case 'container':
-      fs.writeFileSync(filePath, createContainerTemplate(name).trim());
-      return;
     case 'component':
     case 'page':
       fs.writeFileSync(filePath, createComponentTemplate(name).trim());

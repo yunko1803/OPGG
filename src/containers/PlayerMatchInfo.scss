@@ -1,0 +1,9 @@
+@import "../styles/mixins";
+@import "../styles/colors";
+
+.PlayerMatchInfo {
+  width: rem(69);
+  height: 100%;
+  background-color: brown;
+  margin-left: rem(1);
+}
