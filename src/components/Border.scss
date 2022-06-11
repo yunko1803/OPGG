@@ -1,8 +1,8 @@
 @import "../styles/mixins";
 @import "../styles/colors";
 
-.PlayerQuickInfo {
+.Border {
   width: 100%;
-  height: rem(17.5);
-  background-color: yellow;
+  height: rem(.1);
+  border-bottom: 1px solid #d8d8d8;
 }

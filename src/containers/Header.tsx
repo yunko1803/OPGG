@@ -6,16 +6,14 @@ import HeaderBox from './HeaderBox';
 
 type Props = {
   className?: string;
-  name: string;
-  handleChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmitClick: (summonerName: string) => void;
 };
 
-const Header: React.FC<Props> = ({ className, name, handleChangeName }) => {
+const Header: React.FC<Props> = ({ className, onSubmitClick }) => {
   return (
     <div className={classNames('Header', className)}>
       <HeaderBox
-        name={name}
-        handleChangeName={handleChangeName}
+        onSubmitClick={onSubmitClick}
       />
     </div>
   );

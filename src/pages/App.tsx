@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Nullable, Summoner } from '../models/index';
+import { get } from '../apis/request';
+import Border from '../components/Border';
 import Header from '../containers/Header';
 import PlayerInfo from '../containers/PlayerInfo';
-import PlayerQuickInfo from '../containers/PlayerQuickInfo';
+import PlayerBasicInfo from '../containers/PlayerBasicInfo';
 import './App.scss';
 
 function App() {
   const [name, setName] = useState('');
+  const [summonerBasicData, setSummonerBasicData] = useState<Nullable<Summoner>>(null);
+
+  useEffect(() => {
+    loadSummonerBasicData();
+  }, [name])
 
   return (
     <div className="App">
-      <Header name={name} handleChangeName={handleChangeName} />
-      <PlayerQuickInfo />
+      <Header
+        onSubmitClick={onSubmitClick}
+      />
+      <PlayerBasicInfo
+        summonerBasicData={summonerBasicData}
+      />
+      <Border />
       <PlayerInfo />
     </div>
   );
 
-  function handleChangeName(e: React.ChangeEvent<HTMLInputElement>) {
-    const summonerName = e.target.value;
+  function onSubmitClick(summonerName: string) {
     setName(summonerName);
+  }
+
+  async function loadSummonerBasicData() {
+    if (!name) return;
+
+    const link = 'https://codingtest.op.gg/api/summoner/' + name;
+    const rep = await get<Summoner>(link);
+    setSummonerBasicData(rep);
   }
 }
 
