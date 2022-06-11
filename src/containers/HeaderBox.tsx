@@ -1,8 +1,8 @@
-import './Header.scss';
+import './HeaderBox.scss';
 
 import React from 'react';
 import classNames from 'classnames';
-import HeaderBox from './HeaderBox';
+import SearchBar from '../components/SearchBar';
 
 type Props = {
   className?: string;
@@ -10,10 +10,10 @@ type Props = {
   handleChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Header: React.FC<Props> = ({ className, name, handleChangeName }) => {
+const HeaderBox: React.FC<Props> = ({ className, name, handleChangeName }) => {
   return (
-    <div className={classNames('Header', className)}>
-      <HeaderBox
+    <div className={classNames('HeaderBox', className)}>
+      <SearchBar
         name={name}
         handleChangeName={handleChangeName}
       />
@@ -21,4 +21,4 @@ const Header: React.FC<Props> = ({ className, name, handleChangeName }) => {
   );
 };
 
-export default Header;
+export default HeaderBox;

@@ -1,0 +1,32 @@
+@import "../styles/mixins";
+@import "../styles/colors";
+
+.SearchBar {
+  width: rem(26);
+  height: rem(3.2);
+  border-radius: rem(.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  padding: 0px 12px 0px 14px;
+}
+
+.SearchBar__input {
+  height: rem(3);
+  border: none;
+  flex: 1;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.SearchBar__btn {
+  cursor: pointer;
+  font-weight: bold;
+  color: #1ea1f7;
+  font-family: Helvetica;
+  font-size: rem(1.8);
+}
