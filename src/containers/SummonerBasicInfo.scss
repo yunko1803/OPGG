@@ -1,8 +1,11 @@
 @import "../styles/mixins";
 @import "../styles/colors";
 
-.PlayerBasicInfo {
+.SummonerBasicInfo {
   width: rem(100);
   height: rem(17.3);
-  background-color: yellow;
 }
+
+  .SummonerBasicInfo__box {
+    padding-left: rem(3.5);
+  }

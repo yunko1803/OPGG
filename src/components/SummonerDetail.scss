@@ -1,0 +1,32 @@
+@import "../styles/mixins";
+@import "../styles/colors";
+
+.SummonerDetail {
+  display: flex;
+}
+
+  .SummonerDetail__info {
+    margin-top: rem(1.1);
+  }
+
+    .SummonerDetail__info__name {
+      font-size: rem(2);
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      color: #242929;
+    }
+
+    .SummonerDetail__info__rank {
+      font-size: rem(1.1);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      color: #657070;
+    }
+
+      .SummonerDetail__info__rank__bold {
+        font-weight: bold;
+      }

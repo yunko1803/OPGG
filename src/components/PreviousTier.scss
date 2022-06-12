@@ -1,0 +1,31 @@
+@import "../styles/mixins";
+@import "../styles/colors";
+
+.PreviousTier {
+  height: rem(2);
+  background-color: #e0e3e3;
+  border: solid rem(.1) #d0d3d4;
+  border-radius: rem(.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: rem(.7);
+}
+
+  .PreviousTier__content {
+    font-family: Helvetica;
+    font-size: rem(1.1);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #657070;
+    padding-left: rem(.4);
+    padding-right: rem(.3);
+  }
+
+    .PreviousTier__content__bold {
+      font-weight: bold;
+      margin-right: rem(.3);
+    }

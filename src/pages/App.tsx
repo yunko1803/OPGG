@@ -3,13 +3,15 @@ import { Nullable, Summoner } from '../models/index';
 import { get } from '../apis/request';
 import Border from '../components/Border';
 import Header from '../containers/Header';
-import PlayerInfo from '../containers/PlayerInfo';
-import PlayerBasicInfo from '../containers/PlayerBasicInfo';
+import SummonerInfo from '../containers/SummonerInfo';
+import SummonerBasicInfo from '../containers/SummonerBasicInfo';
 import './App.scss';
+import Spacer from '../components/Spacer';
 
 function App() {
   const [name, setName] = useState('');
   const [summonerBasicData, setSummonerBasicData] = useState<Nullable<Summoner>>(null);
+  const [isBasicDataLoading, setIsBasicDataLoading] = useState(false);
 
   useEffect(() => {
     loadSummonerBasicData();
@@ -20,11 +22,13 @@ function App() {
       <Header
         onSubmitClick={onSubmitClick}
       />
-      <PlayerBasicInfo
+      <SummonerBasicInfo
         summonerBasicData={summonerBasicData}
+        isLoading={isBasicDataLoading}
       />
       <Border />
-      <PlayerInfo />
+      <Spacer space={10} />
+      <SummonerInfo />
     </div>
   );
 
@@ -35,9 +39,11 @@ function App() {
   async function loadSummonerBasicData() {
     if (!name) return;
 
+    setIsBasicDataLoading(true);
     const link = 'https://codingtest.op.gg/api/summoner/' + name;
     const rep = await get<Summoner>(link);
     setSummonerBasicData(rep);
+    setIsBasicDataLoading(false);
   }
 }
 

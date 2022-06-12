@@ -1,20 +1,22 @@
 export type Nullable<T> = T | null;
 
 export interface Summoner {
-  ladderRank: LadderRank;
-  leagues: League[];
-  level: number;
-  name: string
-  previousTiers: TierRank[];
-  profileBackgroundImageUrl: string;
-  profileBorderImageUrl: string;
-  profileImageUrl: string;
-  url: string
+  summoner: {
+    ladderRank: LadderRank;
+    leagues: League[];
+    level: number;
+    name: string;
+    previousTiers: TierRank[];
+    profileBackgroundImageUrl: string;
+    profileBorderImageUrl: string;
+    profileImageUrl: string;
+    url: string;
+  }
 }
 
 export interface LadderRank {
-  rank: number
-  rankPercentOfTop: number
+  rank: number;
+  rankPercentOfTop: number;
 }
 
 export interface League {
@@ -25,10 +27,10 @@ export interface League {
 }
 
 export interface TierRank {
-  division: string
-  imageUrl: string
+  division: string;
+  imageUrl: string;
   lp: number;
-  name: string
+  name: string;
   season: number;
   shortString: string;
   string: string;

@@ -1,0 +1,103 @@
+@import "../styles/mixins";
+@import "../styles/colors";
+
+.SummonerLogo {
+  position: relative;
+  width: rem(12);
+  height: rem(12);
+  margin-right: rem(1.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .SummonerLogo__border {
+    position: absolute;
+  }
+
+  .SummonerLogo__main {
+    position: absolute;
+  }
+
+  .SummonerLogo__level {
+    position: absolute;
+    bottom: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 40px;
+  }
+
+  .SummonerLogo__level__outside__left {
+    position: relative;
+    width: 0;
+    border-right: 7px solid #f6e08f;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    top: rem(4.8);
+  }
+
+  .SummonerLogo__level__outside__middle {
+    position: relative;
+    width: rem(3);
+    height: rem(2.3);
+    background-color: #f6e08f;
+    border-bottom: 1px solid #ca9a2c;
+    border-radius: rem(.1);
+    left: rem(.67);
+    top: rem(2.4);
+  }
+
+  .SummonerLogo__level__outside__right {
+    position: relative;
+    width: 0;
+    border-left: 7px solid #ca9a2c;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    left: rem(3.6);
+  }
+
+  .SummonerLogo__level__inside {
+    position: absolute;
+  }
+
+  .SummonerLogo__level__inside__left {
+    position: relative;
+    width: 0;
+    border-right: 6px solid #2c3548;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    top: rem(4.5);
+    left: rem(.05);
+  }
+
+  .SummonerLogo__level__inside__middle {
+    position: relative;
+    width: rem(2.9);
+    height: rem(2.2);
+    background-color: #2c3548;
+    border-radius: rem(.1);
+    left: rem(.63);
+    top: rem(2.4);
+    color: #eabd56;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SummonerLogo__level__inside__right {
+    position: relative;
+    width: 0;
+    border-left: 6px solid #2c3548;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: rem(3.55);
+    top: rem(.3);
+  }

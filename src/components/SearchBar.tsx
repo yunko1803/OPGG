@@ -22,7 +22,10 @@ const SearchBar: React.FC<Props> = ({ className, onSubmitClick }) => {
         value={summonerName}
         onChange={handleChangeName}
       />
-      <div className='SearchBar__btn'>
+      <div
+        className='SearchBar__btn'
+        onClick={handleSubmit}
+      >
         .GG
       </div>
     </form>
