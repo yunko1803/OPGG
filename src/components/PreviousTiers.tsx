@@ -7,14 +7,14 @@ import PreviousTier from './PreviousTier';
 
 type Props = {
   className?: string;
-  previousTiers?: TierRank[];
+  previousTiers: TierRank[];
 };
 
 const PreviousTiers: React.FC<Props> = ({ className, previousTiers }) => {
 
   return (
     <div className={classNames('PreviousTiers', className)}>
-      {previousTiers?.map((tier) =>
+      {previousTiers.map((tier) =>
         <PreviousTier
           key={tier.season}
           season={tier.season}

@@ -5,9 +5,9 @@ import classNames from 'classnames';
 
 type Props = {
   className?: string;
-  profileBorderImageUrl?: string;
-  profileImageUrl?: string;
-  level?: number;
+  profileBorderImageUrl: string;
+  profileImageUrl: string;
+  level: number;
 };
 
 const SummonerLogo: React.FC<Props> = ({ className, profileBorderImageUrl, profileImageUrl, level }) => {

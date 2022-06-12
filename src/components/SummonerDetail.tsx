@@ -7,11 +7,11 @@ import SummonerLogo from './SummonerLogo';
 
 type Props = {
   className?: string;
-  profileBorderImageUrl?: string;
-  profileImageUrl?: string;
-  level?: number;
-  name?: string;
-  ladderRank?: LadderRank;
+  profileBorderImageUrl: string;
+  profileImageUrl: string;
+  level: number;
+  name: string;
+  ladderRank: LadderRank;
 };
 
 const SummonerDetail: React.FC<Props> = ({ className, profileBorderImageUrl, profileImageUrl, level, name, ladderRank }) => {
@@ -27,8 +27,8 @@ const SummonerDetail: React.FC<Props> = ({ className, profileBorderImageUrl, pro
         <div className="SummonerDetail__info__name">{name}</div>
         <div className="SummonerDetail__info__rank">
           {`래더 랭킹 `}
-          <span className="SummonerDetail__info__rank__bold">{ladderRank?.rank.toLocaleString('en', {useGrouping:true})}</span>
-          {`위 (상위 ${ladderRank?.rankPercentOfTop}%)`}
+          <span className="SummonerDetail__info__rank__bold">{ladderRank.rank.toLocaleString('en', {useGrouping:true})}</span>
+          {`위 (상위 ${ladderRank.rankPercentOfTop}%)`}
         </div>
       </div>
     </div>

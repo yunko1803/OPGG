@@ -2,7 +2,8 @@ import './SummonerPage.scss';
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Nullable, Summoner } from '../models/index';
+import { Summoner } from '../models/index';
+import { emptySummoner } from '../models/emptyData';
 import { get } from '../apis/request';
 import Border from '../components/Border';
 import Header from '../containers/Header';
@@ -12,7 +13,7 @@ import Spacer from '../components/Spacer';
 
 function SummonerPage() {
   const params = useParams();
-  const [summonerBasicData, setSummonerBasicData] = useState<Nullable<Summoner>>(null);
+  const [summonerBasicData, setSummonerBasicData] = useState<Summoner>(emptySummoner);
   const [isBasicDataLoading, setIsBasicDataLoading] = useState(false);
 
   useEffect(() => {
