@@ -2,7 +2,7 @@ import './SummonerRanksAndChampions.scss';
 
 import React from 'react';
 import classNames from 'classnames';
-import { Summoner } from '../models/index';
+import { Summoner, MostInfoDTO } from '../models/index';
 import RankResult from '../components/RankResult';
 import ChampionWinningRate from '../components/ChampionWinningRate';
 import Spacer from '../components/Spacer';
@@ -10,9 +10,10 @@ import Spacer from '../components/Spacer';
 type Props = {
   className?: string;
   summonerBasicData: Summoner;
+  mostInfoData: MostInfoDTO;
 };
 
-const SummonerRanksAndChampions: React.FC<Props> = ({ className, summonerBasicData }) => {
+const SummonerRanksAndChampions: React.FC<Props> = ({ className, summonerBasicData, mostInfoData }) => {
   const summoner = summonerBasicData.summoner;
 
   return (
@@ -21,7 +22,7 @@ const SummonerRanksAndChampions: React.FC<Props> = ({ className, summonerBasicDa
       <Spacer space={8} />
       <RankResult rankData={summoner.leagues[1]} />
       <Spacer space={8} />
-      <ChampionWinningRate />
+      <ChampionWinningRate mostInfoData={mostInfoData} />
     </div>
   );
 };

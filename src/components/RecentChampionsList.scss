@@ -1,0 +1,8 @@
+@import "../styles/mixins";
+
+.RecentChampionsList {
+}
+
+  .RecentChampionsList__cell:last-child {
+    border-bottom: none;
+  }

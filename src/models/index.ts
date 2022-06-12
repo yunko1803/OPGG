@@ -38,3 +38,32 @@ export interface TierRank {
   tierDivision: string;
   tierRankPoint: number;
 }
+
+export interface MostInfoDTO {
+  champions: MostChampion[];
+  recentWinRate: ChampionWinRate[];
+}
+
+export interface MostChampion {
+  assists: number;
+  cs: number;
+  deaths: number;
+  games: number;
+  id: number;
+  imageUrl: string;
+  key: string;
+  kills: number;
+  losses: number;
+  name: string;
+  rank: number;
+  wins: number;
+}
+
+export interface ChampionWinRate {
+  id: number;
+  imageUrl: string;
+  key: string;
+  losses: number;
+  name: string;
+  wins: number;
+}

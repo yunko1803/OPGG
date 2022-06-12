@@ -2,6 +2,35 @@
 
 .ChampionWinningRate {
   width: rem(30);
-  height: rem(40);
-  background-color: black;
+  background-color: #ededed;
+  border: solid rem(.1) #cdd2d2;
+  border-radius: rem(.2);
 }
+
+  .ChampionWinningRate__tabs {
+    display: flex;
+    justify-content: space-between;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: rem(1.2);
+  }
+
+    .ChampionWinningRate__tabs__tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      height: rem(4.4);
+      cursor: pointer;
+      font-weight: bold;
+      color: #5e5e5e;
+
+      &--deselect {
+        border: rem(.1) solid #cdd2d2;
+        background-color: #f2f2f2;
+        color: #879292;
+        border-top: none;
+      }
+    }

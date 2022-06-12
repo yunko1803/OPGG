@@ -57,3 +57,8 @@ export const emptySummoner = {
     url: ''
   }
 }
+
+export const emptyMostInfoDTO = {
+  champions: [],
+  recentWinRate: []
+}
