@@ -29,12 +29,13 @@
     font-family: Helvetica;
     font-size: rem(1.3);
     color: #879292;
+    width: rem(3.5);
   }
 
   .RecentSevenDaysCell__bar {
     margin-left: rem(1.2);
     height: rem(2.4);
-    width: rem(17);
+    width: rem(17) !important;
     margin-right: rem(.8);
     border-radius: rem(.4);
     display: flex;
