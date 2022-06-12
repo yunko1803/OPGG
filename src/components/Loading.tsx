@@ -1,6 +1,7 @@
 import './Loading.scss';
 
 import React from 'react';
+import Spinner from 'react-spinner-material';
 import classNames from 'classnames';
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 const Loading: React.FC<Props> = ({ className }) => {
   return (
     <div className={classNames('Loading', className)}>
-      Loading...
+      <Spinner radius={30} color={"#333"} stroke={2} visible={true} />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const SummonerBasicInfo: React.FC<Props> = ({ className, summonerBasicData, isLo
 
   return (
     <div className={classNames('SummonerBasicInfo', className)}>
-      {(isLoading) ? <Loading /> :
+      {(isLoading) ? <Loading className="SummonerBasicInfo__loading" /> :
         <div className="SummonerBasicInfo__box">
           <PreviousTiers previousTiers={summoner.previousTiers} />
           <Spacer space={6} />

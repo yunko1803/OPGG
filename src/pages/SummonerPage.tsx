@@ -29,7 +29,9 @@ function SummonerPage() {
       />
       <Border />
       <Spacer space={10} />
-      <SummonerInfo />
+      <SummonerInfo
+        summonerBasicData={summonerBasicData}
+      />
     </div>
   );
 

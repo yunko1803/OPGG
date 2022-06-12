@@ -1,0 +1,77 @@
+@import "../styles/mixins";
+
+.RankResult {
+  @include padding-vertical(rem(1));
+  position: relative;
+  width: rem(30);
+  background-color: #f2f2f2;
+  border: rem(.1) solid #cdd2d2;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+  .RankResult__loading {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+  }
+
+  .RankResult__content {
+    display: flex;
+  }
+
+    .RankResult__content__detail {
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+
+      .RankResult__content__detail__label {
+        font-size: rem(1.1);
+        color: #879292;
+        margin-top: rem(.6);
+      }
+
+      .RankResult__content__detail__position {
+        font-size: rem(1.2);
+        color: #353a3a;
+        margin-top: rem(.4);
+
+        &--bold {
+          font-weight: bold;
+        }
+
+        &--font {
+          font-family: Helvetica;
+        }
+      }
+
+      .RankResult__content__detail__tier {
+        font-family: Helvetica;
+        color: #1f8ecd;
+        font-size: rem(1.5);
+        font-weight: bold;
+        margin-top: rem(.4);
+      }
+
+      .RankResult__content__detail__lp {
+        font-family: Helvetica;
+        font-size: rem(1.2);
+        color: #879292;
+        margin-top: rem(.6);
+
+        &--bold {
+          color: #555e5e;
+          font-weight: bold;
+        }
+      }
+
+      .RankResult__content__detail__winningrate {
+        font-family: Helvetica;
+        font-size: rem(1.2);
+        color: #879292;
+        margin-top: rem(.3);
+      }
