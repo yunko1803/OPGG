@@ -10,7 +10,10 @@ type Props = {
 };
 
 const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
-  const kda = (champion.kills + champion.assists) / champion.deaths;
+  const summarizedKill = champion.kills / champion.games
+  const summarizedDeath = champion.deaths / champion.games
+  const summarizedAssist = champion.assists / champion.games
+  const kda = (summarizedKill + summarizedAssist) / summarizedDeath;
   const kdaFormatted = kda.toFixed(2) + ':1 평점';
   const winRate = Math.floor((champion.wins / champion.games) * 100) + '%';
   const isWinRateHigh = Math.floor((champion.wins / champion.games) * 100) > 60;
@@ -41,7 +44,7 @@ const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
           {kdaFormatted}
         </div>
         <div className="OverallChampionsCell__kda__detail">
-          {`${champion.kills} / ${champion.deaths} / ${champion.assists}`}
+          {`${summarizedKill.toFixed(1)} / ${summarizedDeath.toFixed(1)} / ${summarizedAssist.toFixed(1)}`}
         </div>
       </div>
       <div className="OverallChampionsCell__winrate">

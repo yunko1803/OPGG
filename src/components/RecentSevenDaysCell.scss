@@ -50,6 +50,7 @@
       color: #fff;
       font-family: Helvetica;
       font-size: rem(1.2);
+      min-width: rem(2);
     }
 
     .RecentSevenDaysCell__bar__loss {
@@ -63,4 +64,5 @@
       font-family: Helvetica;
       font-size: rem(1.2);
       padding-right: rem(.4);
+      min-width: rem(2);
     }
