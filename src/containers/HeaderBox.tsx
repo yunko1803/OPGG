@@ -6,15 +6,12 @@ import SearchBar from '../components/SearchBar';
 
 type Props = {
   className?: string;
-  onSubmitClick: (summonerName: string) => void;
 };
 
-const HeaderBox: React.FC<Props> = ({ className, onSubmitClick }) => {
+const HeaderBox: React.FC<Props> = ({ className }) => {
   return (
     <div className={classNames('HeaderBox', className)}>
-      <SearchBar
-        onSubmitClick={onSubmitClick}
-      />
+      <SearchBar />
     </div>
   );
 };

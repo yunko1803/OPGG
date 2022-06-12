@@ -1,4 +1,4 @@
-import './SearchBar.scss';
+import './HomeSearchBar.scss';
 
 import React, { useState } from 'react';
 import classNames from 'classnames';
@@ -8,30 +8,33 @@ type Props = {
   className?: string;
 };
 
-const SearchBar: React.FC<Props> = ({ className }) => {
+const HomeSearchBar: React.FC<Props> = ({ className }) => {
   const [summonerName, setSummonerName] = useState('');
   const navigate = useNavigate();
 
   return (
     <form
-      className={classNames('SearchBar', className)}
+      className={classNames('HomeSearchBar', className)}
       onSubmit={handleSubmit}
     >
-      <input
-        className="SearchBar__input"
-        placeholder="소환사명, 챔피언..."
-        value={summonerName}
-        onChange={handleChangeName}
-      />
-      <div
-        className="SearchBar__btn"
-        onClick={handleSubmit}
-      >
+      <div className="HomeSearchBar__main">
+        <div className="HomeSearchBar__main__title">
+          Search
+        </div>
+        <input
+          className="HomeSearchBar__main__input"
+          placeholder="소환사명1, 소환사명2, ..."
+          value={summonerName}
+          onChange={handleChangeName}
+        />
+      </div>
+
+      <div className="HomeSearchBar__btn">
         <img
-          className="SearchBar__btn__logo"
+          className="HomeSearchBar__btn__logo"
           src={process.env.PUBLIC_URL + '/icon-gg.png'}
-          width="28"
-          height="14"
+          width="40"
+          height="20"
           onClick={handleSubmit}
           alt="GG logo"
         />
@@ -46,10 +49,9 @@ const SearchBar: React.FC<Props> = ({ className }) => {
   function handleSubmit(e: React.SyntheticEvent) {
     if (!summonerName) return;
 
-    e.preventDefault();
     navigate(`/summoners/${summonerName}`);
     setSummonerName('');
   }
 };
 
-export default SearchBar;
+export default HomeSearchBar;

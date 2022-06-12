@@ -6,15 +6,12 @@ import HeaderBox from './HeaderBox';
 
 type Props = {
   className?: string;
-  onSubmitClick: (summonerName: string) => void;
 };
 
-const Header: React.FC<Props> = ({ className, onSubmitClick }) => {
+const Header: React.FC<Props> = ({ className }) => {
   return (
     <div className={classNames('Header', className)}>
-      <HeaderBox
-        onSubmitClick={onSubmitClick}
-      />
+      <HeaderBox />
     </div>
   );
 };

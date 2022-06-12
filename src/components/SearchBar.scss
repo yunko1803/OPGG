@@ -1,5 +1,4 @@
 @import "../styles/mixins";
-@import "../styles/colors";
 
 .SearchBar {
   width: rem(26);
@@ -10,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   border: none;
-  padding: 0px 12px 0px 14px;
+  padding: 0px 0px 0px 14px;
 }
 
 .SearchBar__input {
@@ -24,9 +23,14 @@
 }
 
 .SearchBar__btn {
+  height: rem(3.2);
   cursor: pointer;
   font-weight: bold;
   color: #1ea1f7;
   font-family: Helvetica;
   font-size: rem(1.8);
+  padding-right: rem(1.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

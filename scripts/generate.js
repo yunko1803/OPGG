@@ -40,7 +40,6 @@ export default ${Component};
 
 const createStyleTemplate = (Component) => `
 @import "../styles/mixins";
-@import "../styles/colors";
 
 .${Component} {
 }
