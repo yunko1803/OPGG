@@ -14,10 +14,10 @@ const OverallChampionsList: React.FC<Props> = ({ className, champions }) => {
 
   return (
     <div className={classNames('OverallChampionsList', className)}>
-      {champions.map(champion => (
+      {champions.map((champion, i) => (
         <OverallChampionsCell
           className="OverallChampionsList__cell"
-          key={champion.id}
+          key={i}
           champion={champion}
         />
       ))}

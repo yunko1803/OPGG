@@ -3,6 +3,10 @@
 .SummonerMatchInfo {
   width: rem(69);
   height: 100vh;
-  background-color: brown;
   margin-left: rem(1);
 }
+
+  .SummonerMatchInfo__table {
+    border: rem(.1) solid #cdd2d2;
+    border-radius: rem(.2);
+  }

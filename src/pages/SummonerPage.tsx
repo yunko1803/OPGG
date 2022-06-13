@@ -2,8 +2,8 @@ import './SummonerPage.scss';
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Summoner, MostInfoDTO } from '../models/index';
-import { emptySummoner, emptyMostInfoDTO } from '../models/emptyData';
+import { Summoner, MostInfoDTO, MatchesDTO } from '../models/index';
+import { emptySummoner, emptyMostInfoDTO, emptyMatchesDTO } from '../models/emptyData';
 import { get } from '../apis/request';
 import Border from '../components/Border';
 import Header from '../containers/Header';
@@ -16,11 +16,13 @@ function SummonerPage() {
   const [summonerBasicData, setSummonerBasicData] = useState<Summoner>(emptySummoner);
   const [isBasicDataLoading, setIsBasicDataLoading] = useState(false);
   const [mostInfoData, setMostInfoData] = useState<MostInfoDTO>(emptyMostInfoDTO);
+  const [matchesData, setMatchesData] = useState<MatchesDTO>(emptyMatchesDTO);
 
   useEffect(() => {
     loadSummonerBasicData();
     loadMostInfoData();
-  }, [params.summonerName])
+    loadMatchesData();
+  }, [params.summonerName]);
 
   return (
     <div className="SummonerPage">
@@ -34,6 +36,7 @@ function SummonerPage() {
       <SummonerInfo
         summonerBasicData={summonerBasicData}
         mostInfoData={mostInfoData}
+        matchesData={matchesData}
       />
     </div>
   );
@@ -54,6 +57,14 @@ function SummonerPage() {
     const link = `https://codingtest.op.gg/api/summoner/${params.summonerName}/mostInfo`;
     const rep = await get<MostInfoDTO>(link);
     setMostInfoData(rep);
+  }
+
+  async function loadMatchesData() {
+    if (!params.summonerName) return;
+
+    const link = `https://codingtest.op.gg/api/summoner/${params.summonerName}/matches`;
+    const rep = await get<MatchesDTO>(link);
+    setMatchesData(rep);
   }
 }
 

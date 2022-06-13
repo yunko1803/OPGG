@@ -1,0 +1,9 @@
+@import "../styles/mixins";
+
+.MatchTypeSummaryChampion {
+  width: rem(22.8);
+  border-left: rem(.1) solid #cdd2d2;
+  border-right: rem(.1) solid #cdd2d2;
+  padding-left: rem(1.6);
+  padding-top: rem(1.4);
+}

@@ -13,10 +13,10 @@ type Props = {
 const RecentChampionsList: React.FC<Props> = ({ className, champions }) => {
   return (
     <div className={classNames('RecentChampionsList', className)}>
-      {champions.map(champion => (
+      {champions.map((champion, i) => (
         <RecentSevenDaysCell
           className="RecentChampionsList__cell"
-          key={champion.id}
+          key={i}
           champion={champion}
         />
       ))}

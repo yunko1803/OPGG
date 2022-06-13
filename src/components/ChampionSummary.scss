@@ -1,0 +1,61 @@
+@import "../styles/mixins";
+
+.ChampionSummary {
+  display: flex;
+  margin-bottom: rem(1.2);
+}
+
+  .ChampionSummary__logo {
+    border-radius: rem(5);
+  }
+
+  .ChampionSummary__detail {
+    margin-left: rem(.8);
+  }
+
+    .ChampionSummary__detail__name {
+      color: #333333;
+      font-size: rem(1.4);
+    }
+
+  .ChampionSummary__bottom {
+    display: flex;
+    margin-top: rem(.3);
+    font-size: rem(1.1);
+  }
+
+    .ChampionSummary__bottom__winrate {
+      font-family: Helvetica;
+      color: #555555;
+    }
+
+      .ChampionSummary__bottom__winrate__percent {
+        color: #333333;
+        font-weight: bold;
+
+        &--elite {
+          color: #c6443e;
+        }
+      }
+
+      .ChampionSummary__bottom__winrate__unit {
+        color: #333333;
+
+        &--elite {
+          color: #c6443e;
+        }
+      }
+
+    .ChampionSummary__bottom__border {
+      border-left: rem(.1) solid #cdd2d2;
+      margin-left: rem(.6);
+      margin-right: rem(.6);
+    }
+
+  .ChampionSummary__dummy {
+    display: flex;
+    align-items: center;
+    font-size: rem(1.1);
+    color: #999999;
+    margin-left: rem(.8);
+  }

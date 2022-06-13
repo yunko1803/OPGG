@@ -62,3 +62,29 @@ export const emptyMostInfoDTO = {
   champions: [],
   recentWinRate: []
 }
+
+export const emptyMatchesDTO = {
+  champions: [],
+  games: [],
+  positions: [],
+  summary: {
+    assists: -1,
+    deaths: -1,
+    kills: -1,
+    losses: -1,
+    wins: -1,
+  }
+}
+
+export const emptyChampionWinRate = {
+  id: -1,
+  imageUrl: '',
+  key: '',
+  losses: -1,
+  name: '',
+  wins: -1,
+  games: -1,
+  kills: -1,
+  deaths: -1,
+  assists: -1,
+}

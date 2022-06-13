@@ -1,0 +1,89 @@
+@import "../styles/mixins";
+
+.MatchTypeSummaryChart {
+  width: rem(27.6);
+  height: 100%;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  display: flex;
+}
+
+  .MatchTypeSummaryChart__record {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .MatchTypeSummaryChart__record__result {
+      font-family: Helvetica;
+      font-size: rem(1.2);
+      color: #666666;
+    }
+
+    .MatchTypeSummaryChart__record__chart {
+      width: rem(9);
+      height: rem(9);
+      border-radius: rem(5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .MatchTypeSummaryChart__record__chart__winrate {
+        width: rem(6.4);
+        height: rem(6.4);
+        background-color: #ededed;
+        border-radius: rem(5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Helvetica;
+        color: #555555;
+        font-weight: bold;
+        font-size: rem(1.4);
+      }
+
+  .MatchTypeSummaryChart__kda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: rem(2);
+  }
+
+    .MatchTypeSummaryChart__kda__data {
+      font-family: Helvetica;
+      font-size: 11px;
+      color: #999999;
+      letter-spacing: normal;
+    }
+
+      .MatchTypeSummaryChart__kda__data__content {
+        font-weight: bold;
+        color: #333333;
+
+        &--death {
+          font-weight: bold;
+          color: #c6443e;
+        }
+      }
+
+    .MatchTypeSummaryChart__kda__score {
+      font-family: Helvetica;
+      font-size: rem(1.6);
+      font-weight: bold;
+    }
+
+    .MatchTypeSummaryChart__kda__winrate {
+      font-weight: normal;
+      color: #5e5e5e;
+
+      &--elite {
+        color: #c6443e;
+      }
+    }

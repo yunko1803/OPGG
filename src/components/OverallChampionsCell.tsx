@@ -3,6 +3,7 @@ import './OverallChampionsCell.scss';
 import React from 'react';
 import classNames from 'classnames';
 import { MostChampion } from '../models/index';
+import { getKDAColor } from '../utils/functions';
 
 type Props = {
   className?: string;
@@ -17,7 +18,7 @@ const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
   const kdaFormatted = kda.toFixed(2) + ':1 평점';
   const winRate = Math.floor((champion.wins / champion.games) * 100) + '%';
   const isWinRateHigh = Math.floor((champion.wins / champion.games) * 100) > 60;
-  const kdaColor = selectKDAColor(kda);
+  const kdaColor = getKDAColor(kda);
 
   return (
     <div className={classNames('OverallChampionsCell', className)}>
@@ -59,17 +60,6 @@ const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
       </div>
     </div>
   );
-
-  function selectKDAColor(kda: number) {
-    if (kda >= 5)
-      return '#e19205';
-    else if (kda >= 4)
-      return '#1f8ecd';
-    else if (kda >= 3)
-      return '#2daf7f';
-    else
-      return '#5e5e5e';
-  }
 };
 
 export default OverallChampionsCell;

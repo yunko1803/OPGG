@@ -1,0 +1,8 @@
+@import "../styles/mixins";
+
+.PositionLogo {
+
+  &--top {
+    transform: rotate(180deg);
+  }
+}

@@ -2,6 +2,7 @@ import './RankResult.scss';
 
 import React from 'react';
 import classNames from 'classnames';
+import { ABBREVIATED_SOLO_RANK, SOLO_RANK, FLEX_RANK } from '../utils/constants';
 import { League } from '../models/index';
 import Loading from './Loading';
 
@@ -56,10 +57,10 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
 
   function getRankType() {
     switch (tierRank.name) {
-      case '솔랭':
-        return '솔로 랭크';
-      case '자유 5:5 랭크':
-        return '자유 5:5 랭크';
+      case ABBREVIATED_SOLO_RANK:
+        return SOLO_RANK;
+      case FLEX_RANK:
+        return FLEX_RANK;
     }
   }
 

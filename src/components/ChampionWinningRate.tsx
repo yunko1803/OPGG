@@ -3,11 +3,9 @@ import './ChampionWinningRate.scss';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { MostInfoDTO } from '../models/index';
+import { ALL_CHAMPIONS_WINRATE, RECENT_SEVENDAYS_WINRATE } from '../utils/constants';
 import OverallChampionsList from './OverallChampionsList';
 import RecentChampionsList from './RecentChampionsList';
-
-const OVERALL = 'overall';
-const RECENT = 'recent';
 
 type Props = {
   className?: string;
@@ -16,32 +14,32 @@ type Props = {
 };
 
 const ChampionWinningRate: React.FC<Props> = ({ className, tabClassName, mostInfoData }) => {
-  const [selected, setSelected] = useState(OVERALL);
-  const isOverallSelected = selected === OVERALL;
+  const [selected, setSelected] = useState(ALL_CHAMPIONS_WINRATE);
+  const isAllChampsWinRateSelected = selected === ALL_CHAMPIONS_WINRATE;
 
   return (
     <div className={classNames('ChampionWinningRate', className)}>
       <div className="ChampionWinningRate__tabs">
         <div
           className={classNames('ChampionWinningRate__tabs__tab', tabClassName, {
-            'ChampionWinningRate__tabs__tab--deselect': !isOverallSelected,
+            'ChampionWinningRate__tabs__tab--deselect': !isAllChampsWinRateSelected,
           })}
-          style={selected !== OVERALL ? { borderLeft: 'none' } : {}}
-          onClick={(e) => onClickTab(OVERALL)}
+          style={selected !== ALL_CHAMPIONS_WINRATE ? { borderLeft: 'none' } : {}}
+          onClick={(e) => onClickTab(ALL_CHAMPIONS_WINRATE)}
         >
-          챔피언 승률
+          {ALL_CHAMPIONS_WINRATE}
         </div>
         <div
           className={classNames('ChampionWinningRate__tabs__tab', tabClassName, {
-            'ChampionWinningRate__tabs__tab--deselect': isOverallSelected,
+            'ChampionWinningRate__tabs__tab--deselect': isAllChampsWinRateSelected,
           })}
-          style={selected !== RECENT ? { borderRight: 'none' } : {}}
-          onClick={(e) => onClickTab(RECENT)}
+          style={selected !== RECENT_SEVENDAYS_WINRATE ? { borderRight: 'none' } : {}}
+          onClick={(e) => onClickTab(RECENT_SEVENDAYS_WINRATE)}
         >
-          7일간 랭크 승률
+          {RECENT_SEVENDAYS_WINRATE}
         </div>
       </div>
-      {isOverallSelected ? (
+      {isAllChampsWinRateSelected ? (
         <OverallChampionsList champions={mostInfoData.champions} />
         ) : (
           <RecentChampionsList champions={mostInfoData.recentWinRate} />

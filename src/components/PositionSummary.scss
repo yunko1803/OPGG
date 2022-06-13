@@ -1,0 +1,43 @@
+@import "../styles/mixins";
+
+.PositionSummary {
+  display: flex;
+  margin-top: rem(2);
+}
+
+  .PositionSummary__detail {
+    margin-left: rem(.8);
+  }
+
+    .PositionSummary__detail__name {
+      font-size: rem(1.4);
+    }
+
+  .PositionSummary__bottom {
+    display: flex;
+    font-size: rem(1.1);
+    width: rem(8.5);
+    justify-content: space-between;
+    margin-top: rem(.3);
+  }
+
+    .PositionSummary__bottom__occurence {
+      flex: .5;
+      border-right: rem(.1) solid #cdd2d2;
+      color: #1f8ecd;
+      font-family: Helvetica;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+
+    .PositionSummary__bottom__winrate {
+      flex: 1;
+      text-align: center;
+    }
+
+      .PositionSummary__bottom__winrate__bold {
+        font-weight: bold;
+      }
