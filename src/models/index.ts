@@ -91,7 +91,7 @@ export interface GameInfo {
   gameLength: number;
   gameType: string;
   isWin: boolean;
-  items: ImageObj;
+  items: ImageObj[];
   mapInfo: MapInfo;
   mmr: number;
   needRenew: boolean;

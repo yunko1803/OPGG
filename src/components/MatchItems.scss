@@ -1,4 +1,42 @@
 @import "../styles/mixins";
 
 .MatchItems {
+  margin-left: rem(3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+  .MatchItems__items {
+    display: flex;
+  }
+
+    .MatchItems__items__expense {
+      display: flex;
+      width: rem(7.2);
+      height: rem(4.8);
+      flex-wrap: wrap;
+    }
+
+    .MatchItems__items__free {
+      height: rem(4.8);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .MatchItems__items__ward {
+      margin-bottom: rem(.2);
+    }
+
+  .MatchItems__wards {
+    margin-top: rem(.7);
+    display: flex;
+    font-size: rem(1.1);
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .MatchItems__wards__logo {
+      margin-right: rem(.4);
+    }

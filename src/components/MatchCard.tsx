@@ -40,7 +40,11 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
         championLevel={match.champion.level}
         stats={match.stats.general}
       />
-      <MatchItems />
+      <MatchItems
+        items={match.items}
+        wardScore={match.stats.ward}
+        isWin={match.isWin}
+      />
       <MatchSummoners />
       <MatchSummoners />
     </div>

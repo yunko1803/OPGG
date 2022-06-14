@@ -1,0 +1,18 @@
+@import "../styles/mixins";
+
+.ItemLogo {
+  border-radius: rem(.2);
+  margin-right: rem(.2);
+}
+
+  .ItemLogo__dummy {
+    background-color: #cb9e9a;
+    width: rem(2.2);
+    height: rem(2.2);
+    border-radius: rem(.2);
+    margin-right: rem(.2);
+
+    &--win {
+      background-color: #7aa5c3;
+    }
+  }
