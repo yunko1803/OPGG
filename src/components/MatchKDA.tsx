@@ -2,36 +2,35 @@ import './MatchKDA.scss';
 
 import React from 'react';
 import classNames from 'classnames';
-import { GameInfoStats } from '../models/index';
+import { General } from '../models/index';
 import MatchBadge from './MatchBadge';
 
 type Props = {
   className?: string;
-  stats: GameInfoStats;
+  stats: General;
   isWin: boolean;
 };
 
 const MatchKDA: React.FC<Props> = ({ className, stats, isWin }) => {
-  const general = stats.general;
-  const badges = [general.largestMultiKillString, general.opScoreBadge];
+  const badges = [stats.largestMultiKillString, stats.opScoreBadge];
 
   return (
     <div className={classNames('MatchKDA', className)}>
       <div className="MatchKDA__detail">
-        {general.kill}
+        {stats.kill}
         <span className="MatchKDA__detail__slash">
           {' / '}
         </span>
         <span className="MatchKDA__detail__death">
-          {general.death}
+          {stats.death}
         </span>
         <span className="MatchKDA__detail__slash">
           {' / '}
         </span>
-        {general.assist}
+        {stats.assist}
       </div>
       <div className="MatchKDA__score">
-        {general.kdaString}
+        {stats.kdaString}
         {' '}
         <span className="MatchKDA__score__unit">
           평점
@@ -41,13 +40,13 @@ const MatchKDA: React.FC<Props> = ({ className, stats, isWin }) => {
         {!!badges[0] && (
           <MatchBadge
             isWin={isWin}
-            killBadge={general.largestMultiKillString}
+            killBadge={stats.largestMultiKillString}
           />
         )}
         {!!badges[1] && (
           <MatchBadge
             isWin={isWin}
-            mvpBadge={general.opScoreBadge}
+            mvpBadge={stats.opScoreBadge}
           />
         )}
       </div>

@@ -33,10 +33,13 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
         runes={match.peak}
       />
       <MatchKDA
-        stats={match.stats}
+        stats={match.stats.general}
         isWin={match.isWin}
       />
-      <MatchIndicator />
+      <MatchIndicator
+        championLevel={match.champion.level}
+        stats={match.stats.general}
+      />
       <MatchItems />
       <MatchSummoners />
       <MatchSummoners />

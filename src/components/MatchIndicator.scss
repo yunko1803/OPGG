@@ -1,4 +1,23 @@
 @import "../styles/mixins";
 
 .MatchIndicator {
+  font-size: rem(1.1);
+  color: #555e5e;
+  margin-top: rem(1.3);
+  margin-left: rem(4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+  .MatchIndicator__level {
+    margin-bottom: rem(.6);
+  }
+
+  .MatchIndicator__cs {
+    margin-bottom: rem(.6);
+  }
+
+  .MatchIndicator__participation {
+    color: #d0021b;
+  }
