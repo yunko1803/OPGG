@@ -11,6 +11,7 @@ import MatchSummary from './MatchSummary';
 import MatchChampion from './MatchChampion';
 import MatchKDA from './MatchKDA';
 import MatchIndicator from './MatchIndicator';
+import MatchCardToggleButton from './MatchCardToggleButton';
 
 type Props = {
   className?: string;
@@ -22,7 +23,7 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
 
   useEffect(() => {
     fetchMatchDetail();
-  });
+  }, []);
 
   return (
     <div className={classNames('MatchCard', className, {
@@ -54,6 +55,9 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
       />
       <MatchSummoners players={matchDetailData.teams[0].players} />
       <MatchSummoners players={matchDetailData.teams[1].players} />
+      <MatchCardToggleButton
+        isWin={match.isWin}
+      />
     </div>
   );
 
