@@ -151,3 +151,19 @@ export interface Summary {
   losses: number;
   wins: number;
 }
+
+export interface MatchDetailDTO {
+  gameId: string;
+  teams: Team[];
+}
+
+export interface Team {
+  players: FellowPlayer[];
+  teamId: number;
+}
+
+export interface FellowPlayer {
+  champion: Champion;
+  summonerId: string;
+  summonerName: string;
+}

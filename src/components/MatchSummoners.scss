@@ -1,4 +1,7 @@
 @import "../styles/mixins";
 
 .MatchSummoners {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

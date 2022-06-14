@@ -88,3 +88,14 @@ export const emptyChampionWinRate = {
   deaths: -1,
   assists: -1,
 }
+
+export const emptyMatchDetail = {
+  gameId: '',
+  teams: [{
+    players: [],
+    teamId: -1,
+  }, {
+    players: [],
+    teamId: -1,
+  }],
+}
