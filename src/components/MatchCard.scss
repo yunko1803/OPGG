@@ -1,0 +1,13 @@
+@import "../styles/mixins";
+
+.MatchCard {
+  height: rem(9.6);
+  border: rem(.1) solid #c0aba8;
+  background-color: #d6b5b2;
+  display: flex;
+  padding-left: rem(2);
+
+  &--win {
+    background-color: #b0ceea;
+  }
+}

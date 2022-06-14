@@ -4,6 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { MostChampion } from '../models/index';
 import { getKDAColor } from '../utils/functions';
+import ChampionLogo from './ChampionLogo';
 
 type Props = {
   className?: string;
@@ -22,12 +23,12 @@ const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
 
   return (
     <div className={classNames('OverallChampionsCell', className)}>
-      <img
+      <ChampionLogo
         className="OverallChampionsCell__img"
-        src={champion.imageUrl}
-        width="45"
-        height="45"
-        alt="champion img"
+        isCircle
+        width={45}
+        height={45}
+        imageUrl={champion.imageUrl}
       />
       <div className="OverallChampionsCell__champion">
         <div className="OverallChampionsCell__champion__name">

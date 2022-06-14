@@ -3,11 +3,11 @@ import './SummonerMatchInfo.scss';
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { MatchesDTO, GameInfo } from '../models/index';
-import { ALL, ABBREVIATED_SOLO_RANK, SOLO_RANK, FLEX_RANK } from '../utils/constants';
+import { ALL, ABBREVIATED_SOLO_RANK, FLEX_RANK } from '../utils/constants';
 import MatchTypeTabs from '../components/MatchTypeTabs';
 import MatchTypeSummary from '../components/MatchTypeSummary';
 import Spacer from '../components/Spacer';
-import MatchList from './MatchList';
+import MatchCardList from './MatchCardList';
 
 type Props = {
   className?: string;
@@ -36,7 +36,7 @@ const SummonerMatchInfo: React.FC<Props> = ({ className, matchesData }) => {
         />
       </div>
       <Spacer space={16} />
-      <MatchList />
+      <MatchCardList matches={filteredMatches} />
     </div>
   );
 

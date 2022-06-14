@@ -1,0 +1,35 @@
+@import "../styles/mixins";
+
+.MatchChampion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: rem(1.5);
+  margin-left: rem(2);
+}
+
+  .MatchChampion__detail {
+    display: flex;
+  }
+
+    .MatchChampion__detail__logo {
+      border-radius: rem(5);
+      margin-right: rem(.6);
+    }
+
+    .MatchChampion__detail__spells {
+      display: flex;
+      flex-direction: column;
+      margin-right: rem(.4);
+    }
+
+    .MatchChampion__detail__runes {
+      display: flex;
+      flex-direction: column;
+    }
+
+  .MatchChampion__name {
+    font-size: rem(1.1);
+    color: #555555;
+    font-weight: bold;
+  }

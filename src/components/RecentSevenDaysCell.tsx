@@ -3,6 +3,7 @@ import './RecentSevenDaysCell.scss';
 import React from 'react';
 import classNames from 'classnames';
 import { ChampionWinRate } from '../models/index';
+import ChampionLogo from './ChampionLogo';
 
 type Props = {
   className?: string;
@@ -14,12 +15,12 @@ const RecentSevenDaysCell: React.FC<Props> = ({ className, champion }) => {
 
   return (
     <div className={classNames('RecentSevenDaysCell', className)}>
-      <img
+      <ChampionLogo
         className="RecentSevenDaysCell__img"
-        src={champion.imageUrl}
-        width="32"
-        height="32"
-        alt="champion img"
+        isCircle
+        width={32}
+        height={32}
+        imageUrl={champion.imageUrl}
       />
       <div className="RecentSevenDaysCell__champion">
         {champion.name}

@@ -4,6 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { ChampionWinRate } from '../models/index';
 import { getKDAColor } from '../utils/functions';
+import ChampionLogo from './ChampionLogo';
 
 type Props = {
   className?: string;
@@ -20,12 +21,11 @@ const ChampionSummary: React.FC<Props> = ({ className, champion, isDummy }) => {
 
   return (
     <div className={classNames('ChampionSummary', className)}>
-      <img
+      <ChampionLogo
         className="ChampionSummary__logo"
         height={34}
         width={34}
-        alt="champion logo"
-        src={championLogo}
+        imageUrl={championLogo}
       />
       {!isDummy ? (
         <div className="ChampionSummary__detail">

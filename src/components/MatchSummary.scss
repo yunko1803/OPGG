@@ -1,0 +1,51 @@
+@import "../styles/mixins";
+
+.MatchSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: rem(1.1);
+  position: relative;
+}
+
+  .MatchSummary__dummy {
+    height: rem(1.3);
+  }
+
+  .MatchSummary__type {
+    font-weight: bold;
+    color: #555555;
+    position: absolute;
+    top: rem(1.3);
+  }
+
+  .MatchSummary__created {
+    color: #555555;
+    margin-top: rem(.4);
+  }
+
+  .MatchSummary__border {
+    width: rem(2.7);
+    border: rem(.05) solid #d0a6a5;
+    margin-top: rem(.3);
+
+    &--win {
+      border: rem(.05) solid #94b9d6;
+    }
+  }
+
+  .MatchSummary__result {
+    font-weight: bold;
+    color: #d0021b;
+    margin-top: rem(.5);
+
+    &--win {
+      color: #2c709b;
+    }
+  }
+
+  .MatchSummary__length {
+    color: #555555;
+    margin-top: rem(.4);
+  }

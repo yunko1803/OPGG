@@ -1,0 +1,9 @@
+@import "../styles/mixins";
+
+.RuneLogo {
+  margin-bottom: rem(.2);
+
+  &--circle {
+    border-radius: rem(5);
+  }
+}
