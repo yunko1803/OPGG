@@ -6,8 +6,15 @@
   background-color: #d6b5b2;
   display: flex;
   padding-left: rem(2);
+  justify-content: space-between;
+  border-right: none;
 
   &--win {
     background-color: #b0ceea;
   }
 }
+
+  .MatchCard__summoners {
+    display: flex;
+    align-items: center;
+  }

@@ -1,10 +1,13 @@
 export const ALL_CHAMPIONS_WINRATE = '챔피언 승률';
 export const RECENT_SEVENDAYS_WINRATE = '7일간 랭크 승률';
 export const ALL = '전체';
+export const NORMAL = '일반';
 export const ABBREVIATED_SOLO_RANK = '솔랭';
 export const SOLO_RANK = '솔로 랭크';
 export const FLEX_RANK = '자유 5:5 랭크';
+export const ABBREVIATED_FLEX_RANK = '자랭';
 export const ARAM = '무작위 총력전';
+export const ABBREVIATED_ARAM = '칼바람';
 export const DOUBLE_KILL = '더블킬';
 export const TRIPLE_KILL = '트리플킬';
 export const QUADRA_KILL = '쿼드라킬';

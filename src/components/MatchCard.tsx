@@ -53,8 +53,16 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
         wardScore={match.stats.ward}
         isWin={match.isWin}
       />
-      <MatchSummoners players={matchDetailData.teams[0].players} />
-      <MatchSummoners players={matchDetailData.teams[1].players} />
+      <div className="MatchCard__summoners">
+        <MatchSummoners
+          summoner={match.summonerName}
+          players={matchDetailData.teams[0].players}
+        />
+        <MatchSummoners
+          summoner={match.summonerName}
+          players={matchDetailData.teams[1].players}
+        />
+      </div>
       <MatchCardToggleButton
         isWin={match.isWin}
       />

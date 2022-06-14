@@ -3,6 +3,7 @@ import './MatchSummary.scss';
 import React from 'react';
 import classNames from 'classnames';
 import { differenceTimeFormat } from '../utils/functions';
+import { ABBREVIATED_SOLO_RANK, ABBREVIATED_FLEX_RANK, ABBREVIATED_ARAM, FLEX_RANK, ARAM, NORMAL } from '../utils/constants';
 
 type Props = {
   className?: string;
@@ -17,12 +18,12 @@ const MatchSummary: React.FC<Props> = ({ className, type, createDate, isWin, gam
   const createdAt = differenceTimeFormat(new Date(createDate * 1000));
   const gameMinutes = Math.floor(gameLength / 60);
   const gameSeconds = Math.floor(gameLength % 60);
+  const formattedType = getFormattedType(type);
 
   return (
     <div className={classNames('MatchSummary', className)}>
-      <div className="MatchSummary__dummy" />
       <div className="MatchSummary__type">
-        {type}
+        {formattedType}
       </div>
       <div className="MatchSummary__created">
         {createdAt}
@@ -40,6 +41,20 @@ const MatchSummary: React.FC<Props> = ({ className, type, createDate, isWin, gam
       </div>
     </div>
   );
+
+  function getFormattedType(type: string) {
+    switch (type) {
+      case ABBREVIATED_SOLO_RANK:
+      case NORMAL:
+        return type;
+
+      case FLEX_RANK:
+        return ABBREVIATED_FLEX_RANK;
+
+      case ARAM:
+        return ABBREVIATED_ARAM;
+    }
+  }
 };
 
 export default MatchSummary;

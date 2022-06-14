@@ -8,9 +8,10 @@ import MatchSummoner from './MatchSummoner';
 type Props = {
   className?: string;
   players: FellowPlayer[];
+  summoner: string;
 };
 
-const MatchSummoners: React.FC<Props> = ({ className, players }) => {
+const MatchSummoners: React.FC<Props> = ({ className, players, summoner }) => {
 
   return (
     <div className={classNames('MatchSummoners', className)}>
@@ -18,6 +19,7 @@ const MatchSummoners: React.FC<Props> = ({ className, players }) => {
         <MatchSummoner
           key={i}
           player={player}
+          summoner={summoner}
         />
       ))}
     </div>

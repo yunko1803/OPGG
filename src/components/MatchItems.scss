@@ -1,7 +1,6 @@
 @import "../styles/mixins";
 
 .MatchItems {
-  margin-left: rem(3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,13 +12,13 @@
 
     .MatchItems__items__expense {
       display: flex;
-      width: rem(7.2);
-      height: rem(4.8);
+      width: 72px;
+      height: 48px;
       flex-wrap: wrap;
     }
 
     .MatchItems__items__free {
-      height: rem(4.8);
+      height: 48px;
       display: flex;
       flex-direction: column;
     }

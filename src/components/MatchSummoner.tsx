@@ -8,9 +8,10 @@ import ChampionLogo from './ChampionLogo';
 type Props = {
   className?: string;
   player: FellowPlayer;
+  summoner: string;
 };
 
-const MatchSummoner: React.FC<Props> = ({ className, player }) => {
+const MatchSummoner: React.FC<Props> = ({ className, player, summoner }) => {
   const champion = player.champion;
 
   return (
@@ -21,7 +22,9 @@ const MatchSummoner: React.FC<Props> = ({ className, player }) => {
         height={16}
         imageUrl={champion.imageUrl}
       />
-      <div className="MatchSummoner__name">
+      <div className={classNames('MatchSummoner__name', {
+        'MatchSummoner__name--myself': player.summonerName === summoner
+      })}>
         {player.summonerName}
       </div>
     </div>
