@@ -32,7 +32,10 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
         spells={match.spells}
         runes={match.peak}
       />
-      <MatchKDA />
+      <MatchKDA
+        stats={match.stats}
+        isWin={match.isWin}
+      />
       <MatchIndicator />
       <MatchItems />
       <MatchSummoners />

@@ -1,0 +1,27 @@
+@import "../styles/mixins";
+
+.MatchBadge {
+  height: rem(1.8);
+  border-radius: rem(.9);
+  font-family: Helvetica;
+  font-size: rem(1);
+  border: rem(.1) solid #7f3590;
+  background-color: #8c51c5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: rem(.5);
+  padding-right: rem(.5);
+  margin-right: rem(.4);
+
+  &--kill {
+    background-color: #ec4f48;
+    border: rem(.1) solid #bf3b36;
+  }
+
+  &--mvp {
+    background-color: #EB9C00;
+    border: rem(.1) solid #E28400;;
+  }
+}

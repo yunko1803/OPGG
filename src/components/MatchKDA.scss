@@ -1,4 +1,42 @@
 @import "../styles/mixins";
 
 .MatchKDA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: rem(3);
 }
+
+  .MatchKDA__detail {
+    font-family: Helvetica;
+    font-size: rem(1.5);
+    font-weight: bold;
+    color: #555e5e;
+    margin-bottom: rem(.6);
+  }
+
+    .MatchKDA__detail__slash {
+      font-weight: normal;
+      color: #948e8d;
+    }
+
+    .MatchKDA__detail__death {
+      color: #d0021b;
+    }
+
+  .MatchKDA__score {
+    font-family: Helvetica;
+    font-size: rem(1.1);
+    color: #333333;
+    font-weight: bold;
+  }
+
+    .MatchKDA__score__unit {
+      color: #555e5e;
+    }
+
+  .MatchKDA__badges {
+    display: flex;
+    margin-top: rem(.7);
+  }
