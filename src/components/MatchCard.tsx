@@ -16,9 +16,10 @@ import MatchCardToggleButton from './MatchCardToggleButton';
 type Props = {
   className?: string;
   match: GameInfo;
+  itemData: any;
 };
 
-const MatchCard: React.FC<Props> = ({ className, match }) => {
+const MatchCard: React.FC<Props> = ({ className, match, itemData }) => {
   const [matchDetailData, setMatchDetailData] = useState<MatchDetailDTO>(emptyMatchDetail);
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const MatchCard: React.FC<Props> = ({ className, match }) => {
         items={match.items}
         wardScore={match.stats.ward}
         isWin={match.isWin}
+        itemData={itemData}
       />
       <div className="MatchCard__summoners">
         <MatchSummoners

@@ -10,9 +10,10 @@ type Props = {
   wardScore: Ward;
   items: ImageObj[];
   isWin: boolean;
+  itemData: any;
 };
 
-const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin }) => {
+const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin, itemData }) => {
   const filterItems = items.filter((item, i) => i !== items.length - 1);
   const emptyItems = new Array(6 - filterItems.length).fill(-1);
   emptyItems.forEach(dummy => filterItems.push({ imageUrl: '' }));
@@ -28,6 +29,7 @@ const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin }) => 
               width={22}
               height={22}
               isWin={isWin}
+              item={getItemData(item.imageUrl)}
             />
           ))}
         </div>
@@ -37,6 +39,7 @@ const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin }) => 
             imageUrl={items[items.length - 1].imageUrl}
             width={22}
             height={22}
+            item={getItemData(items[items.length - 1].imageUrl)}
           />
           <ItemLogo
             imageUrl={''}
@@ -58,6 +61,12 @@ const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin }) => 
       </div>
     </div>
   );
+
+  function getItemData(itemUrl: string) {
+    const itemArrays = itemUrl.split('/');
+    const itemNum = itemArrays[itemArrays.length - 1].split('.')[0];
+    return itemData[itemNum];
+  }
 };
 
 export default MatchItems;

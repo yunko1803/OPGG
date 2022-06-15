@@ -1,0 +1,31 @@
+@import "../styles/mixins";
+
+.ItemDescription {
+  min-width: rem(30);
+  color: #fff;
+  font-size: rem(1.1);
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  .ItemDescription__content {
+    min-width: rem(30);
+    background-color: #222727;
+    padding: rem(1);
+  }
+
+  .ItemDescription__content__price__number {
+    color: #EB9C00;;
+  }
+
+  .ItemDescription__content__sharp {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #222727;
+  }

@@ -1,7 +1,8 @@
 import './ItemLogo.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
+import ItemDescription from './ItemDescription';
 
 type Props = {
   className?: string;
@@ -9,22 +10,44 @@ type Props = {
   height: number;
   width: number;
   isWin?: boolean;
+  item?: any;
 };
 
-const ItemLogo: React.FC<Props> = ({ className, imageUrl, height, width, isWin }) => {
+const ItemLogo: React.FC<Props> = ({ className, imageUrl, height, width, isWin, item }) => {
+  const [isHover, setIsHover] = useState(false);
+
   return !imageUrl ? (
     <div className={classNames('ItemLogo__dummy', className, {
       'ItemLogo__dummy--win': isWin
     })} />
   ) : (
-    <img
+    <div
       className={classNames('ItemLogo', className)}
-      width={width}
-      height={height}
-      src={imageUrl}
-      alt="item logo"
-    />
+      onMouseEnter={setMouseHover}
+      onMouseLeave={setOffMouseHover}
+    >
+      <img
+        width={width}
+        height={height}
+        src={imageUrl}
+        alt="item logo"
+      />
+      {isHover && (
+        <ItemDescription
+          className="ItemLogo__description"
+          item={item}
+        />
+      )}
+    </div>
   );
+
+  function setMouseHover() {
+    setIsHover(true);
+  }
+
+  function setOffMouseHover() {
+    setIsHover(false);
+  }
 };
 
 export default ItemLogo;
