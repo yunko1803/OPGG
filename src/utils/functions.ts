@@ -41,3 +41,16 @@ export function differenceTimeFormat(time: Date) {
     return diffMonths + '달 전';
   }
 }
+
+export function getTierDivision(division: string) {
+  switch (division) {
+    case 'i':
+      return 1;
+    case 'ii':
+      return 2;
+    case 'iii':
+      return 3;
+    case 'iv':
+      return 4;
+  }
+}

@@ -3,6 +3,7 @@ import './RankResult.scss';
 import React from 'react';
 import classNames from 'classnames';
 import { ABBREVIATED_SOLO_RANK, SOLO_RANK, FLEX_RANK } from '../utils/constants';
+import { getTierDivision } from '../utils/functions';
 import { League } from '../models/index';
 import Loading from './Loading';
 
@@ -15,7 +16,7 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
   const tierRank = rankData.tierRank;
   const totalMatches = rankData.losses + rankData.wins;
   const winningRate = Math.floor((rankData.wins / totalMatches) * 100);
-  const tierDivision = tierRank.tier + ' ' + getTierDivision();
+  const tierDivision = tierRank.tier + ' ' + getTierDivision(tierRank.division);
   const twoDigitsLP = rankData.tierRank.lp % 100;
   const rankType = getRankType();
 
@@ -61,19 +62,6 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
         return SOLO_RANK;
       case FLEX_RANK:
         return FLEX_RANK;
-    }
-  }
-
-  function getTierDivision() {
-    switch (tierRank.division) {
-      case 'i':
-        return 1;
-      case 'ii':
-        return 2;
-      case 'iii':
-        return 3;
-      case 'iv':
-        return 4;
     }
   }
 };

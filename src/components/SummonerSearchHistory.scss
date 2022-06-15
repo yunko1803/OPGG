@@ -1,0 +1,66 @@
+@import "../styles/mixins";
+
+.SummonerSearchHistory {
+  position: absolute;
+  width: rem(27.4);
+  background-color: #fff;
+  top: rem(3.6);
+  border-radius: rem(.2);
+  left: 0;
+  box-shadow: 0 rem(0.5) rem(1.5) rgba(black, 0.25);
+  z-index: 1;
+}
+
+  .SummonerSearchHistory__tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e3e3e3;
+    color: #9c9c9c;
+    border-radius: rem(.2);
+  }
+
+    .SummonerSearchHistory__tab {
+      flex: 1;
+      height: rem(4.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: rem(1.5);
+      cursor: pointer;
+      border-radius: rem(.2);
+
+      &--selected {
+        color: #5e5e5e;
+        background-color: #fff;
+      }
+
+      &:hover {
+        color: #5e5e5e;
+      }
+    }
+
+  .SummonerSearchHistory__names {
+    padding-top: rem(1);
+    padding-bottom: rem(1);
+  }
+
+  .SummonerSearchHistory__cell {
+    display: flex;
+    height: rem(3.2);
+    padding-left: rem(2);
+    padding-right: rem(2);
+    align-items: center;
+    font-size: rem(1.2);
+    color: #44515C;
+  }
+
+    .SummonerSearchHistory__cell__name {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .SummonerSearchHistory__cell__logo {
+      width: rem(2.4);
+      height: rem(1.6);
+      cursor: pointer;
+    }

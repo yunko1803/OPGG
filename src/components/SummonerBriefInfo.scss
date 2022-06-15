@@ -1,0 +1,40 @@
+@import "../styles/mixins";
+
+.SummonerBriefInfo {
+  position: absolute;
+  width: rem(27.4);
+  background-color: #fff;
+  top: rem(3.6);
+  border-radius: rem(.2);
+  left: 0;
+  box-shadow: 0 rem(0.5) rem(1.5) rgba(black, 0.25);
+  z-index: 1;
+  padding-top: rem(.5);
+  padding-bottom: rem(.5);
+  font-family: Helvetica;
+}
+
+  .SummonerBriefInfo__summoner {
+    padding-left: rem(2);
+    height: rem(4.8);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #D5E3FF;
+    }
+  }
+
+  .SummonerBriefInfo__detail {
+    margin-left: rem(1.5);
+  }
+
+    .SummonerBriefInfo__detail__name {
+      color: #d0021b;
+      font-size: rem(1.4);
+    }
+
+    .SummonerBriefInfo__detail__tier {
+      font-size: rem(1.2);
+    }

@@ -167,3 +167,9 @@ export interface FellowPlayer {
   summonerId: string;
   summonerName: string;
 }
+
+export interface SummonerSearchName {
+  id: number;
+  summonerName: string;
+  isFavorite: boolean;
+}

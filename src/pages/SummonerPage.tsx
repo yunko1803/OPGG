@@ -1,6 +1,6 @@
 import './SummonerPage.scss';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Summoner, MostInfoDTO, MatchesDTO } from '../models/index';
 import { emptySummoner, emptyMostInfoDTO, emptyMatchesDTO } from '../models/emptyData';
@@ -17,8 +17,17 @@ function SummonerPage() {
   const [isBasicDataLoading, setIsBasicDataLoading] = useState(false);
   const [mostInfoData, setMostInfoData] = useState<MostInfoDTO>(emptyMostInfoDTO);
   const [matchesData, setMatchesData] = useState<MatchesDTO>(emptyMatchesDTO);
+  const [isPastSummonersOpen, setIsPastSummonersOpen] = useState(false);
+  const [isCurrentSummonerMenuOpen, setIsCurrentSummonerMenuOpen] = useState(false);
+  const summonersRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    document.addEventListener('mousedown', (event: any) => {
+      if (!summonersRef.current?.contains(event.target)) {
+        setIsPastSummonersOpen(false);
+        setIsCurrentSummonerMenuOpen(false);
+      }
+    });
     loadSummonerBasicData();
     loadMostInfoData();
     loadMatchesData();
@@ -26,7 +35,13 @@ function SummonerPage() {
 
   return (
     <div className="SummonerPage">
-      <Header />
+      <Header
+        summonersRef={summonersRef}
+        isPastSummonersOpen={isPastSummonersOpen}
+        handleIsPastSummonersOpen={setIsPastSummonersOpen}
+        isCurrentSummonerMenuOpen={isCurrentSummonerMenuOpen}
+        handleIsCurrentSummonerMenuOpen={setIsCurrentSummonerMenuOpen}
+      />
       <SummonerBasicInfo
         summonerBasicData={summonerBasicData}
         isLoading={isBasicDataLoading}
