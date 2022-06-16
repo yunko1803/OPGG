@@ -41,11 +41,12 @@ const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin, itemD
             height={22}
             item={getItemData(items[items.length - 1].imageUrl)}
           />
-          <ItemLogo
-            imageUrl={''}
+          <img
+            className="MatchItems__items__build"
+            src={process.env.PUBLIC_URL + (isWin ? '/icon-buildblue.png' : '/icon-buildred.png')}
             width={22}
             height={22}
-            isWin={isWin}
+            alt="build logo"
           />
         </div>
       </div>

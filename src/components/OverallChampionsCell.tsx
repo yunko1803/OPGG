@@ -18,7 +18,7 @@ const OverallChampionsCell: React.FC<Props> = ({ className, champion }) => {
   const kda = (summarizedKill + summarizedAssist) / summarizedDeath;
   const kdaFormatted = kda.toFixed(2) + ':1 평점';
   const winRate = Math.floor((champion.wins / champion.games) * 100) + '%';
-  const isWinRateHigh = Math.floor((champion.wins / champion.games) * 100) > 60;
+  const isWinRateHigh = Math.floor((champion.wins / champion.games) * 100) >= 60;
   const kdaColor = getKDAColor(kda);
 
   return (

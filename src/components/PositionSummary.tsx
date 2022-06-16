@@ -13,6 +13,7 @@ type Props = {
 
 const PositionSummary: React.FC<Props> = ({ className, position, games, wins }) => {
   const positionName = getPositionName();
+  const isNeverPlayed = games === 0;
 
   return (
     <div className={classNames('PositionSummary', className)}>
@@ -28,7 +29,9 @@ const PositionSummary: React.FC<Props> = ({ className, position, games, wins }) 
           <div className="PositionSummary__bottom__winrate">
             승률
             {' '}
-            <span className="PositionSummary__bottom__winrate__bold">{Math.floor((wins / games) * 100)}</span>
+            <span className="PositionSummary__bottom__winrate__bold">
+              {!isNeverPlayed ? Math.floor((wins / games) * 100) : 0}
+            </span>
             %
           </div>
         </div>

@@ -8,25 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  padding-bottom: rem(1);
+  min-width: rem(3.2);
 
   &--win {
     background-color: #7fb0e1;
     border: rem(.1) solid #549dc7;
   }
 }
-
-  .MatchCardToggleButton__btn {
-    transform: rotate(90deg);
-    font-weight: bold;
-    bottom: 0;
-    left: 40%;
-    color: #c1433e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: rem(1.2);
-
-    &--win {
-      color: #04609e;
-    }
-  }

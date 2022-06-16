@@ -16,7 +16,6 @@ type Props = {
 const SummonerSearchHistory: React.FC<Props> = ({ className, searchedNames, onClickPastSummoner, onClickTogglePastSummonerStar, onClickDeletePastSummoner, summonersRef }) => {
   const [selected, setSelected] = useState('최근검색');
   const filteredPastSummoners = searchedNames.filter((pastSummoner) => pastSummoner.isFavorite);
-  // console.log(searchedNames);
 
   return (
     <div

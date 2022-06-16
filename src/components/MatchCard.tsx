@@ -17,9 +17,10 @@ type Props = {
   className?: string;
   match: GameInfo;
   itemData: any;
+  championData: any;
 };
 
-const MatchCard: React.FC<Props> = ({ className, match, itemData }) => {
+const MatchCard: React.FC<Props> = ({ className, match, itemData, championData }) => {
   const [matchDetailData, setMatchDetailData] = useState<MatchDetailDTO>(emptyMatchDetail);
 
   useEffect(() => {
@@ -40,6 +41,7 @@ const MatchCard: React.FC<Props> = ({ className, match, itemData }) => {
         champion={match.champion}
         spells={match.spells}
         runes={match.peak}
+        championData={championData}
       />
       <MatchKDA
         stats={match.stats.general}

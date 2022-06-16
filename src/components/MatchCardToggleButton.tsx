@@ -13,11 +13,12 @@ const MatchCardToggleButton: React.FC<Props> = ({ className, isWin }) => {
     <div className={classNames('MatchCardToggleButton', className, {
       'MatchCardToggleButton--win': isWin
     })}>
-      <div className={classNames('MatchCardToggleButton__btn', className, {
-        'MatchCardToggleButton__btn--win': isWin
-      })}>
-        {'>'}
-      </div>
+      <img
+        className="MatchCardToggleButton__down"
+       src={`https://s-lol-web.op.gg/static/images/icon/common/icon-viewdetail-${isWin ? 'blue' : 'red'}.png?v=1655280878465`}
+       alt="arrow down"
+      />
+
     </div>
   );
 };

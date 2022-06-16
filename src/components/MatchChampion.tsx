@@ -13,9 +13,10 @@ type Props = {
   champion: Champion;
   spells: ImageObj[];
   runes: string[];
+  championData: any;
 };
 
-const MatchChampion: React.FC<Props> = ({ className, champion, spells, runes }) => {
+const MatchChampion: React.FC<Props> = ({ className, champion, spells, runes, championData }) => {
   const name = getChampionName();
 
   return (
@@ -51,14 +52,14 @@ const MatchChampion: React.FC<Props> = ({ className, champion, spells, runes }) 
       </div>
       <Spacer space={7} />
       <div className="MatchChampion__name">
-        {name}
+        {championData[name].name}
       </div>
     </div>
   );
 
   function getChampionName() {
     const filters = champion.imageUrl.split('/');
-    const name = filters[filters.length - 1].split('.')[0].toUpperCase();
+    const name = filters[filters.length - 1].split('.')[0];
     return name;
   }
 };

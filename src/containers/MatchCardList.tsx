@@ -14,9 +14,11 @@ type Props = {
 
 const MatchCardList: React.FC<Props> = ({ className, matches }) => {
   const [itemData, setItemData] = useState<any>({});
+  const [championData, setChampionData] = useState<any>({});
 
   useEffect(() => {
     loadItemData();
+    loadChampionData()
   }, []);
 
   return (
@@ -26,6 +28,7 @@ const MatchCardList: React.FC<Props> = ({ className, matches }) => {
           <MatchCard
             match={match}
             itemData={itemData}
+            championData={championData}
           />
           <Spacer space={8} />
         </div>
@@ -37,6 +40,12 @@ const MatchCardList: React.FC<Props> = ({ className, matches }) => {
     const link = `http://ddragon.leagueoflegends.com/cdn/10.15.1/data/ko_KR/item.json`;
     const rep = await get<any>(link);
     setItemData(rep.data);
+  }
+
+  async function loadChampionData() {
+    const link = `https://ddragon.leagueoflegends.com/cdn/10.15.1/data/ko_KR/champion.json`;
+    const rep = await get<any>(link);
+    setChampionData(rep.data);
   }
 };
 
