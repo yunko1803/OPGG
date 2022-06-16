@@ -33,18 +33,18 @@
     border-right: 7px solid #f6e08f;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
-    top: rem(4.8);
+    top: 48px;
   }
 
   .SummonerLogo__level__outside__middle {
     position: relative;
-    width: rem(3);
-    height: rem(2.3);
+    width: 30px;
+    height: 23px;
     background-color: #f6e08f;
     border-bottom: 1px solid #ca9a2c;
     border-radius: rem(.1);
-    left: rem(.67);
-    top: rem(2.4);
+    left: 6.7px;
+    top: 24px;
   }
 
   .SummonerLogo__level__outside__right {
@@ -53,7 +53,7 @@
     border-left: 7px solid #ca9a2c;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
-    left: rem(3.6);
+    left: 36px;
   }
 
   .SummonerLogo__level__inside {
@@ -66,18 +66,18 @@
     border-right: 6px solid #2c3548;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    top: rem(4.5);
-    left: rem(.05);
+    top: 45px;
+    left: .5px;
   }
 
   .SummonerLogo__level__inside__middle {
     position: relative;
-    width: rem(2.9);
-    height: rem(2.2);
+    width: 29px;
+    height: 22px;
     background-color: #2c3548;
     border-radius: rem(.1);
-    left: rem(.63);
-    top: rem(2.4);
+    left: 6.3px;
+    top: 24px;
     color: #eabd56;
     font-family: Helvetica;
     font-size: 14px;
@@ -97,6 +97,6 @@
     border-left: 6px solid #2c3548;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    left: rem(3.55);
-    top: rem(.3);
+    left: 35.5px;
+    top: 3px;
   }
