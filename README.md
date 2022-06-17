@@ -14,4 +14,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-![Employee data](/repository/public/home.jpg?raw=true "Home Page")
+![home](https://user-images.githubusercontent.com/35706156/174283734-df6a9486-b5ef-48f3-a803-1151038c097c.jpg)
