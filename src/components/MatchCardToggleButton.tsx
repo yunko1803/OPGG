@@ -15,11 +15,21 @@ const MatchCardToggleButton: React.FC<Props> = ({ className, isWin, isRenew }) =
       'MatchCardToggleButton--win': isWin,
       'MatchCardToggleButton--renew': isRenew
     })}>
-      <img
-        className="MatchCardToggleButton__down"
-       src={`https://s-lol-web.op.gg/static/images/icon/common/icon-viewdetail-${isWin ? 'blue' : 'red'}.png?v=1655280878465`}
-       alt="arrow down"
-      />
+
+      {!isRenew ? (
+        <img
+          className="MatchCardToggleButton__down"
+          src={`https://s-lol-web.op.gg/static/images/icon/common/icon-viewdetail-${isWin ? 'blue' : 'red'}.png?v=1655280878465`}
+          alt="arrow down"
+        />
+      ) : (
+        <img
+          className="MatchCardToggleButton__down"
+          src="https://s-lol-web.op.gg/static/images/icon/common/icon-viewdetail-grey.png?v=1655280878465"
+          alt="arrow down"
+        />
+      )}
+
 
     </div>
   );
