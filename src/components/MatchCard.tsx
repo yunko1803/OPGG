@@ -29,12 +29,14 @@ const MatchCard: React.FC<Props> = ({ className, match, itemData, championData }
 
   return (
     <div className={classNames('MatchCard', className, {
-      'MatchCard--win': match.isWin
+      'MatchCard--win': match.isWin,
+      'MatchCard--renew': match.needRenew
     })}>
       <MatchSummary
         type={match.gameType}
         createDate={match.createDate}
         isWin={match.isWin}
+        isRenew={match.needRenew}
         gameLength={match.gameLength}
       />
       <MatchChampion
@@ -56,6 +58,7 @@ const MatchCard: React.FC<Props> = ({ className, match, itemData, championData }
         wardScore={match.stats.ward}
         isWin={match.isWin}
         itemData={itemData}
+        isRenew={match.needRenew}
       />
       <div className="MatchCard__summoners">
         <MatchSummoners
@@ -69,6 +72,7 @@ const MatchCard: React.FC<Props> = ({ className, match, itemData, championData }
       </div>
       <MatchCardToggleButton
         isWin={match.isWin}
+        isRenew={match.needRenew}
       />
     </div>
   );

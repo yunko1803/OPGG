@@ -6,12 +6,14 @@ import classNames from 'classnames';
 type Props = {
   className?: string;
   isWin: boolean;
+  isRenew: boolean;
 };
 
-const MatchCardToggleButton: React.FC<Props> = ({ className, isWin }) => {
+const MatchCardToggleButton: React.FC<Props> = ({ className, isWin, isRenew }) => {
   return (
     <div className={classNames('MatchCardToggleButton', className, {
-      'MatchCardToggleButton--win': isWin
+      'MatchCardToggleButton--win': isWin,
+      'MatchCardToggleButton--renew': isRenew
     })}>
       <img
         className="MatchCardToggleButton__down"

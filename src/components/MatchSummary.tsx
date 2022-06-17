@@ -11,9 +11,10 @@ type Props = {
   createDate: number;
   isWin: boolean;
   gameLength: number;
+  isRenew: boolean;
 };
 
-const MatchSummary: React.FC<Props> = ({ className, type, createDate, isWin, gameLength }) => {
+const MatchSummary: React.FC<Props> = ({ className, type, createDate, isWin, gameLength, isRenew }) => {
   const result = isWin ? '승리' : '패배';
   const createdAt = differenceTimeFormat(new Date(createDate * 1000));
   const gameMinutes = Math.floor(gameLength / 60);
@@ -32,9 +33,10 @@ const MatchSummary: React.FC<Props> = ({ className, type, createDate, isWin, gam
         'MatchSummary__border--win': isWin
       })} />
       <div className={classNames('MatchSummary__result', {
-        'MatchSummary__result--win': isWin
+        'MatchSummary__result--win': isWin,
+        'MatchSummary__result--renew': isRenew
       })}>
-        {result}
+        {!isRenew ? result : '다시하기'}
       </div>
       <div className="MatchSummary__length">
         {`${gameMinutes}분 ${gameSeconds}초`}

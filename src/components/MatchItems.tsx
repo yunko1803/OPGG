@@ -11,9 +11,10 @@ type Props = {
   items: ImageObj[];
   isWin: boolean;
   itemData: any;
+  isRenew: boolean;
 };
 
-const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin, itemData }) => {
+const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin, itemData, isRenew }) => {
   const filterItems = items.filter((item, i) => i !== items.length - 1);
   const emptyItems = new Array(6 - filterItems.length).fill(-1);
   emptyItems.forEach(dummy => filterItems.push({ imageUrl: '' }));
@@ -29,6 +30,7 @@ const MatchItems: React.FC<Props> = ({ className, items, wardScore, isWin, itemD
               width={22}
               height={22}
               isWin={isWin}
+              isRenew={isRenew}
               item={getItemData(item.imageUrl)}
             />
           ))}

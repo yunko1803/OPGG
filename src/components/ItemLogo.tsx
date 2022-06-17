@@ -10,15 +10,17 @@ type Props = {
   height: number;
   width: number;
   isWin?: boolean;
+  isRenew?: boolean;
   item?: any;
 };
 
-const ItemLogo: React.FC<Props> = ({ className, imageUrl, height, width, isWin, item }) => {
+const ItemLogo: React.FC<Props> = ({ className, imageUrl, height, width, isWin, item, isRenew }) => {
   const [isHover, setIsHover] = useState(false);
 
   return !imageUrl ? (
     <div className={classNames('ItemLogo__dummy', className, {
-      'ItemLogo__dummy--win': isWin
+      'ItemLogo__dummy--win': isWin,
+      'ItemLogo__dummy--renew': isRenew
     })} />
   ) : (
     <div
