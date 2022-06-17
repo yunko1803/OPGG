@@ -4,8 +4,15 @@ Create a page of the old OP.GG website
 
 ## Available Scripts
 
-In the project directory, you can run:
+In order to run this project,
 
+### `git clone [repository]`
+
+Please clone this repository first.
+
+### `npm install`
+
+run this command to install the package and the packages that depend on.
 ### `npm start`
 
 Runs the app in the development mode.\
