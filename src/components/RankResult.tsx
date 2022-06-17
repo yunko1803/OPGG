@@ -24,32 +24,51 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
     <div className={classNames('RankResult', className)}>
       {!rankData.hasResults ? <Loading className="RankResult__loading" /> :
         <div className="RankResult__content">
-          <img
-            src={tierRank.imageUrl}
-            width="104"
-            height="104"
-            alt="solo rank logo"
-          />
+          {tierRank.division !== 'Unranked' ? (
+            <img
+              src={tierRank.imageUrl}
+              width="104"
+              height="104"
+              alt="solo rank logo"
+            />
+          ) : (
+            <img
+              className="RankResult__unranked"
+              src={process.env.PUBLIC_URL + '/icon-unranked.png'}
+              width="64"
+              height="64"
+              alt="unrank logo"
+            />
+          )}
+
           <div className="RankResult__content__detail">
             <div className="RankResult__content__detail__label">
               {rankType}
             </div>
-            <div className="RankResult__content__detail__position">
-              <span className="RankResult__content__detail__position--bold">탑</span>
-              {` (총 `}
-              <span className="RankResult__content__detail__position--font">{totalMatches}</span>
-              {`게임)`}
-            </div>
-            <div className="RankResult__content__detail__tier">
-              {tierDivision}
-            </div>
-            <div className="RankResult__content__detail__lp">
-              <span className="RankResult__content__detail__lp--bold">{`${twoDigitsLP} LP`}</span>
-              {` / ${rankData.wins}승 ${rankData.losses}패`}
-            </div>
-            <div className="RankResult__content__detail__winningrate">
-              {`승룰 ${winningRate}%`}
-            </div>
+            {tierRank.division !== 'Unranked' ? (
+              <>
+                <div className="RankResult__content__detail__position">
+                <span className="RankResult__content__detail__position--bold">탑</span>
+                {` (총 `}
+                <span className="RankResult__content__detail__position--font">{totalMatches}</span>
+                {`게임)`}
+              </div>
+              <div className="RankResult__content__detail__tier">
+                {tierDivision}
+              </div>
+              <div className="RankResult__content__detail__lp">
+                <span className="RankResult__content__detail__lp--bold">{`${twoDigitsLP} LP`}</span>
+                {` / ${rankData.wins}승 ${rankData.losses}패`}
+              </div>
+              <div className="RankResult__content__detail__winningrate">
+                {`승룰 ${winningRate}%`}
+              </div>
+              </>
+            ) : (
+              <div className="RankResult__content__detail__unranked">
+                Unranked
+              </div>
+            )}
           </div>
         </div>
       }

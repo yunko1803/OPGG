@@ -27,12 +27,14 @@
       font-style: normal;
       line-height: normal;
       letter-spacing: normal;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
       .RankResult__content__detail__label {
         font-size: rem(1.1);
         color: #879292;
-        margin-top: rem(.6);
       }
 
       .RankResult__content__detail__position {
@@ -75,3 +77,16 @@
         color: #879292;
         margin-top: rem(.3);
       }
+
+  .RankResult__unranked {
+    margin-left: rem(2.8);
+    margin-right: rem(2.8);
+  }
+
+  .RankResult__content__detail__unranked {
+    font-size: rem(1.3);
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #879292;
+    margin-top: rem(.2);
+  }
