@@ -24,7 +24,7 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
     <div className={classNames('RankResult', className)}>
       {!rankData.hasResults ? <Loading className="RankResult__loading" /> :
         <div className="RankResult__content">
-          {tierRank.division !== 'Unranked' ? (
+          {tierRank.tierDivision !== 'Unranked' ? (
             <img
               src={tierRank.imageUrl}
               width="104"
@@ -45,7 +45,7 @@ const RankResult: React.FC<Props> = ({ className, rankData }) => {
             <div className="RankResult__content__detail__label">
               {rankType}
             </div>
-            {tierRank.division !== 'Unranked' ? (
+            {tierRank.tierDivision !== 'Unranked' ? (
               <>
                 <div className="RankResult__content__detail__position">
                 <span className="RankResult__content__detail__position--bold">탑</span>
